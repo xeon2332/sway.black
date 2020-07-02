@@ -11,7 +11,16 @@ void __stdcall hkCreateMove(int sequence_number, float input_sample_frametime, b
 
 	oCreateMove(sequence_number, input_sample_frametime, active);
 
-	std::cout << "hooked lmao" << std::endl;
+	auto cmd = g_Input->GetUserCmd(sequence_number);
+	auto verified = g_Input->GetVerifiedCmd(sequence_number);
+
+	if (!cmd || !cmd->command_number)
+		return;
+
+	// Place functions here
+
+	verified->m_cmd = *cmd;
+	verified->m_crc = cmd->GetChecksum();
 }
 
 void hooks::HookCSGO()
