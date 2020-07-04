@@ -20,6 +20,7 @@ namespace Math
 		i >>= 1;
 		return *(float*)&i;
 	}
+	void SmoothAngle(QAngle src, QAngle& dst, float factor);
 	float VectorDistance(const Vector& v1, const Vector& v2);
 	QAngle CalcAngle(const Vector& src, const Vector& dst);
 	float GetFOV(const QAngle& viewAngle, const QAngle& aimAngle);

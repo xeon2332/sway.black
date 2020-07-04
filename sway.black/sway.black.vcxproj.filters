@@ -31,6 +31,12 @@
     <Filter Include="Source Files\helpers">
       <UniqueIdentifier>{c9e83606-e7b0-4067-98ae-281499985124}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\features">
+      <UniqueIdentifier>{eb8c0db5-0e03-4804-b65a-ebb47174e8b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\features">
+      <UniqueIdentifier>{25124b86-ae38-4b32-a82c-8b3750897b2f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -267,6 +273,12 @@
     <ClInclude Include="helpers\vfunc_hook.hpp">
       <Filter>Source Files\helpers</Filter>
     </ClInclude>
+    <ClInclude Include="legit.h">
+      <Filter>Header Files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="options.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -349,6 +361,9 @@
     </ClCompile>
     <ClCompile Include="helpers\vfunc_hook.cpp">
       <Filter>Source Files\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="legit.cpp">
+      <Filter>Source Files\features</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -2,6 +2,13 @@
 
 namespace Math
 {
+    void NormalizeAngles(QAngle& angles)
+    {
+        for (auto i = 0; i < 3; i++) {
+            while (angles[i] < -180.0f) angles[i] += 360.0f;
+            while (angles[i] > 180.0f) angles[i] -= 360.0f;
+        }
+    }
 	//--------------------------------------------------------------------------------
 	float VectorDistance(const Vector& v1, const Vector& v2)
 	{
@@ -148,4 +155,12 @@ namespace Math
         return false;
     }
     //--------------------------------------------------------------------------------
+    void SmoothAngle(QAngle src, QAngle& dst, float factor)
+    {
+        QAngle delta = dst - src;
+
+        NormalizeAngles(delta);
+
+        dst = src + delta / factor;
+    }
 }
