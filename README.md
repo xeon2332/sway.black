@@ -2,7 +2,7 @@
 (release) means it needs to be in the first release
 
 ## Aimbot
-#### Aimbot
+### Aimbot
 - [ ] Keybind (release)
 - [ ] Smoothness (release)
 - [ ] Fov (release)
@@ -11,7 +11,7 @@
 - [ ] Hitboxes (release)
 - [ ] RCS (release)
 
-#### Triggerbot
+### Triggerbot
 - [ ] Keybind (release)
 - [ ] Hitchance (release)
 - [ ] Delay (release)
@@ -22,7 +22,7 @@
 - [ ] Flick (release)
 
 ## Visual
-#### Effects
+### Effects
 - [ ] Brightness
 - [ ] Flash color/no flash (release)
 - [ ] Remove smokes (release)
@@ -39,7 +39,7 @@
 - [ ] Override 3rd person fov
 - [ ] Override scope fov
 
-#### Other
+### Other
 - [ ] Radar (release)
 - [ ] Cloud radar
 - [ ] Dropped weapons (release)
@@ -50,7 +50,7 @@
 - [ ] Spectator list
 - [ ] Shared esp (when other people use the same esp you can see who they can see - etc. you hold a and he holds b then you can see everyone) 
 
-#### Player
+### Player
 - [ ] Keybind (release)
 - [ ] Teammate (enemy only as standart) (release)
 - [ ] Box (release)
@@ -66,20 +66,20 @@
 - [ ] Charms (release)
 
 ## Skinchanger (release)
-#### Gloves
+### Gloves
 - [ ] T / CT / BOTH
 - [ ] Wear (float)
 - [ ] Seed
 - [ ] (custom gloves from workshop?)
 
-#### Knives
+### Knives
 - [ ] T / CT / BOTH
 - [ ] Wear (float)
 - [ ] Seed
 - [ ] ST
 - [ ] (custom from workshop??)
 
-#### Skins
+### Skins
 - [ ] T / CT / BOTH
 - [ ] Wear (float)
 - [ ] Seed
@@ -88,7 +88,7 @@
 - [ ] (custom from workshop??)
 
 ## Misc
-#### Misc
+### Misc
 - [ ] Knifebot (release)
 - [ ] Zeusbot (release)
 - [ ] Auto pistol (release)
@@ -103,20 +103,20 @@
 - [ ] Last sec defuse (+ keybind)
 - [ ] FOV Circle (release)
 
-#### Settings
+### Settings
 - [ ] Menu open key (release)
 - [ ] Menu color (release)
 - [ ] Hide from obs (disables glow/charms because it isn't obs proof) (release)
 - [ ] Reset menu layout (release)
 - [ ] Uninject (release)
 
-#### Config
-- [ ] Load
-- [ ] Save
-- [ ] Create
-- [ ] Remove
-- [ ] Rename
-- [ ] Reset
+### Config
+- [ ] Load (release)
+- [ ] Save (release)
+- [ ] Create (release)
+- [ ] Remove (release)
+- [ ] Rename (release)
+- [ ] Reset (release)
 
 ## Lua
 - [ ] Enable
