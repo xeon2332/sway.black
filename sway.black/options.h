@@ -1,4 +1,5 @@
 #pragma once
+#include "valve_sdk/misc/Color.hpp"
 
 namespace options
 {
@@ -10,9 +11,11 @@ namespace options
 	extern int aimkey;
 
 	extern bool triggerbot;
-	extern float delay;
+	extern int delay;
 	extern bool trigger_key;
 	extern int triggerkey;
+	extern bool flick;
+	extern float flickfov;
 
 	extern bool bunny_hop;
 

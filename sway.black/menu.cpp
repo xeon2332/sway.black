@@ -5,6 +5,7 @@
 #include <d3d9.h>
 #include <d3dx9tex.h>
 #include "textures.h"
+#include "options.h"
 
 int menu::tab = 0;
 IDirect3DTexture9* menu::aim = 0;
@@ -91,7 +92,19 @@ namespace menu::tabs
 {
 	void aim()
 	{
+		ImGui::Dummy(ImVec2(1, 100));
+		ImGui::Columns(2, nullptr, false);
+		// Aimbot
+		ImGui::Checkbox("Aimbot", &options::aimbot);
+		ImGui::SliderFloat("Smooth", &options::smooth, 0.0f, 25.0f);
 
+		ImGui::NextColumn();
+		// Triggerbot
+		ImGui::Checkbox("Triggerbot", &options::triggerbot);
+		ImGui::SliderInt("Delay (MS)", &options::delay, 0, 400);
+		ImGui::Checkbox("Keybind", &options::trigger_key);
+		ImGui::Checkbox("Flick", &options::flick);
+		ImGui::SliderFloat("Flick FOV", &options::flickfov, 0.0f, 25.0f);
 	}
 
 	void visual()

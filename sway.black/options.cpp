@@ -11,9 +11,11 @@ namespace options
 	int aimkey = false;
 
 	bool triggerbot = false;
-	float delay = false;
+	int delay = false;
 	bool trigger_key = false;
 	int triggerkey = false;
+	bool flick = false;
+	float flickfov = 0.0f;
 
 	bool bunny_hop = false;
 
