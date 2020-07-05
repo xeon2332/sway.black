@@ -383,5 +383,8 @@
     <ClCompile Include="glow.cpp">
       <Filter>Source Files\features</Filter>
     </ClCompile>
+    <ClCompile Include="options.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

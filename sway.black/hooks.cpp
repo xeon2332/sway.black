@@ -9,6 +9,10 @@
 
 namespace hooks
 {
+	vfunc_hook create_move_hook;
+	vfunc_hook draw_model_hook;
+	vfunc_hook post_screen_effect_hook;
+
 	void __stdcall hkCreateMove(int sequence_number, float input_sample_frametime, bool active)
 	{
 		static auto oCreateMove = create_move_hook.get_original<decltype(&hkCreateMove)>(hooks::create_move_index);

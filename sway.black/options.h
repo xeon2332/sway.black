@@ -3,61 +3,61 @@
 namespace options
 {
 	// Aimbot
-	bool aimbot;
-	float smooth;
-	float fov;
-	bool aim_key;
-	int aimkey;
+	extern bool aimbot;
+	extern float smooth;
+	extern float fov;
+	extern bool aim_key;
+	extern int aimkey;
 
-	bool triggerbot;
-	float delay;
-	bool trigger_key;
-	int triggerkey;
+	extern bool triggerbot;
+	extern float delay;
+	extern bool trigger_key;
+	extern int triggerkey;
 
-	bool bunny_hop;
+	extern bool bunny_hop;
 
-	bool glow_enabled;
-	bool glow_players;
-	bool glow_enemies;
-	bool glow_c4_carrier;
-	bool glow_planted_c4;
-	bool glow_defuse_kit;
-	bool glow_chickens;
-	bool glow_weapons;
+	extern bool glow_enabled;
+	extern bool glow_players;
+	extern bool glow_enemies;
+	extern bool glow_c4_carrier;
+	extern bool glow_planted_c4;
+	extern bool glow_defuse_kit;
+	extern bool glow_chickens;
+	extern bool glow_weapons;
 
-	Color color_glow_players;
-	Color color_glow_enemies;
-	Color color_glow_ally;
-	Color color_glow_c4_carrier;
-	Color color_glow_planted_c4;
-	Color color_glow_defuse_kit;
-	Color color_glow_chickens;
-	Color color_glow_weapons;
+	extern Color color_glow_players;
+	extern Color color_glow_enemies;
+	extern Color color_glow_ally;
+	extern Color color_glow_c4_carrier;
+	extern Color color_glow_planted_c4;
+	extern Color color_glow_defuse_kit;
+	extern Color color_glow_chickens;
+	extern Color color_glow_weapons;
 
-	bool chams_player;
-	bool chams_player_enemy;
-	bool chams_player_arms;
-	bool chams_player_ignored;
+	extern bool chams_player;
+	extern bool chams_player_enemy;
+	extern bool chams_player_arms;
+	extern bool chams_player_ignored;
+	 
+	extern bool chams_player_flat;
+	extern bool chams_player_wire_frame;
+	extern bool chams_player_glass;
+	 
+	extern bool chams_no_hands;
+	extern bool chams_arms_enabled;
+	extern bool chams_arms_ignored;
+	 
+	extern bool chams_arms_flat;
+	extern bool chams_arms_wire_frame;
+	extern bool chams_arms_glass;
+	 
+	extern Color color_chams_arms_visible;
+	extern Color color_chams_arms_occluded;
+	 
+	extern Color color_chams_player_enemy_visible;
+	extern Color color_chams_player_ally_visible;
+	extern Color color_chams_player_enemy_occluded;
+	extern Color color_chams_player_ally_occluded;
 
-	bool chams_player_flat;
-	bool chams_player_wire_frame;
-	bool chams_player_glass;
-
-	bool chams_no_hands;
-	bool chams_arms_enabled;
-	bool chams_arms_ignored;
-
-	bool chams_arms_flat;
-	bool chams_arms_wire_frame;
-	bool chams_arms_glass;
-
-	Color color_chams_arms_visible;
-	Color color_chams_arms_occluded;
-
-	Color color_chams_player_enemy_visible;
-	Color color_chams_player_ally_visible;
-	Color color_chams_player_enemy_occluded;
-	Color color_chams_player_ally_occluded;
-
-	bool reveal_ranks;
+	extern bool reveal_ranks;
 }
