@@ -279,6 +279,15 @@
     <ClInclude Include="options.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="chams.h">
+      <Filter>Header Files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="bhop.h">
+      <Filter>Header Files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="glow.h">
+      <Filter>Header Files\features</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -363,6 +372,15 @@
       <Filter>Source Files\helpers</Filter>
     </ClCompile>
     <ClCompile Include="legit.cpp">
+      <Filter>Source Files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="chams.cpp">
+      <Filter>Source Files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="bhop.cpp">
+      <Filter>Source Files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="glow.cpp">
       <Filter>Source Files\features</Filter>
     </ClCompile>
   </ItemGroup>

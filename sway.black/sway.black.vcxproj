@@ -168,7 +168,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="bhop.h" />
+    <ClInclude Include="chams.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="glow.h" />
     <ClInclude Include="helpers\math.hpp" />
     <ClInclude Include="helpers\utils.hpp" />
     <ClInclude Include="helpers\vfunc_hook.hpp" />
@@ -250,7 +253,10 @@
     <ClInclude Include="widget.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bhop.cpp" />
+    <ClCompile Include="chams.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="glow.cpp" />
     <ClCompile Include="helpers\math.cpp" />
     <ClCompile Include="helpers\utils.cpp" />
     <ClCompile Include="helpers\vfunc_hook.cpp" />
