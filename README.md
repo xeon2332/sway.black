@@ -4,11 +4,11 @@
 ## Aimbot
 ### Aimbot
 - [ ] Keybind (release)
-- [ ] Smoothness (release)
-- [ ] Fov (release)
-- [ ] Aim while blind (release)
+- [x] Smoothness (release)
+- [x] Fov (release)
+- [x] Aim while blind (release)
 - [ ] Aim through smoke (release)
-- [ ] Hitboxes (release)
+- [x] Hitboxes (release)
 - [ ] RCS (release)
 
 ### Triggerbot
