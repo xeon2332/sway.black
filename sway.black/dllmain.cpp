@@ -64,18 +64,16 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
             unload = true;
             break;
         case VK_INSERT:
+            std::cout << "joe : " << keys::open << std::endl;
             keys::open = !keys::open;
             break;
         }
     }
 
-    if (true && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
+    if (ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
         return true;
-    
-    if (!keys::open)
-        return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
-    else
-        return true;
+
+    return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
 }
 
 DWORD WINAPI StartCheat(LPVOID param)

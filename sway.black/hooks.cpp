@@ -6,12 +6,15 @@
 #include "options.h"
 #include "bhop.h"
 #include "glow.h"
+#include "legit.h"
+#include "keys.h"
 
 namespace hooks
 {
 	vfunc_hook create_move_hook;
 	vfunc_hook draw_model_hook;
 	vfunc_hook post_screen_effect_hook;
+	vfunc_hook vguisurf_hook;
 
 	void __stdcall hkCreateMove(int sequence_number, float input_sample_frametime, bool active)
 	{
@@ -27,6 +30,11 @@ namespace hooks
 
 		if (options::bunny_hop)
 			BunnyHop::OnCreateMove(cmd);
+
+		if (keys::open)
+			cmd->buttons &= ~IN_ATTACK;
+
+		legit::tick(cmd);
 
 		if (options::reveal_ranks && cmd->buttons & IN_SCORE)
 			g_CHLClient->DispatchUserMessage(CS_UM_ServerRankRevealAll, 0, 0, nullptr);
@@ -62,15 +70,30 @@ namespace hooks
 		return oDoPostScreenEffects(g_ClientMode, edx, a1);
 	}
 
+	void __fastcall hkLockCursor(void* _this)
+	{
+		static auto ofunc = vguisurf_hook.get_original<decltype(&hkLockCursor)>(67);
+
+		if (keys::open)
+		{
+			g_VGuiSurface->UnlockCursor();
+			g_InputSystem->ResetInputState();
+			return;
+		}
+		ofunc(g_VGuiSurface);
+	}
+
 	void hooks::HookCSGO()
 	{
 		create_move_hook.setup(g_CHLClient);
 		draw_model_hook.setup(g_MdlRender);
 		post_screen_effect_hook.setup(g_ClientMode);
+		vguisurf_hook.setup(g_VGuiSurface);
 
 		create_move_hook.hook_index(hooks::create_move_index, hkCreateMove);
 		draw_model_hook.hook_index(hooks::draw_model_index, hkDrawModelExecute);
 		post_screen_effect_hook.hook_index(hooks::post_screen_effect_index, hkDoPostScreenEffects);
+		vguisurf_hook.hook_index(67, hkLockCursor);
 	}
 
 	void hooks::UnHook()

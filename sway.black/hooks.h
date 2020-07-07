@@ -13,6 +13,7 @@ namespace hooks
 	extern vfunc_hook create_move_hook;
 	extern vfunc_hook draw_model_hook;
 	extern vfunc_hook post_screen_effect_hook;
+	extern vfunc_hook vguisurf_hook;
 
 	void __stdcall hkCreateMove(int sequence_number, float input_sample_frametime, bool active);
 	void __fastcall hkDrawModelExecute(void* _this, int, IMatRenderContext* ctx, const DrawModelState_t& state, const ModelRenderInfo_t& pInfo, matrix3x4_t* pCustomBoneToWorld);
