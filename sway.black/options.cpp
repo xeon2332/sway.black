@@ -1,14 +1,18 @@
 #include "valve_sdk/misc/Color.hpp"
+#include "valve_sdk/sdk.hpp"
 #include "options.h"
 
 namespace options
 {
 	// Aimbot
 	bool aimbot = false;
-	float smooth = false;
-	float fov = false;
+	float smooth = 0.0f;
+	float fov = 0.0f;
 	bool aim_key = false;
 	int aimkey = false;
+	bool aimflashed = false;
+	bool aimsmoked = false;
+	Hitboxes hitbox = HITBOX_HEAD;
 
 	bool triggerbot = false;
 	int delay = false;

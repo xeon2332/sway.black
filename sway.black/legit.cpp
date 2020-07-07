@@ -24,6 +24,9 @@ bool Checkplayer(C_BasePlayer* player)
 	if (player->m_bGunGameImmunity())
 		return false;
 
+	if (!options::aimflashed && g_LocalPlayer->IsFlashed())
+		return false;
+
 	int firedShots = g_LocalPlayer->m_iShotsFired();
 	Vector targetpos = player->GetHitboxPos(HITBOX_HEAD);
 
@@ -42,20 +45,21 @@ bool Checkplayer(C_BasePlayer* player)
 
 int Gettarget(CUserCmd* cmd)
 {
-	float nearest = 0.0f;
+	float nearest = options::fov;
 	int index = -1;
 	float fov = options::fov;
 
-	for (int i = 0; i < g_GlobalVars->maxClients; i++)
+	for (int i = 1; i < g_GlobalVars->maxClients; i++)
 	{
 		auto player = C_BasePlayer::GetPlayerByIndex(i);
 
 		if (!Checkplayer(player))
 			continue;
 
-		QAngle viewangles = cmd->viewangles;
+		QAngle viewangles;
+		g_EngineClient->GetViewAngles(&viewangles);
 
-		Vector targetpos;
+		Vector targetpos = player->GetHitboxPos(HITBOX_HEAD);
 
 		auto dist = Math::GetFOV(viewangles, Math::CalcAngle(g_LocalPlayer->GetEyePos(), targetpos));
 
@@ -71,9 +75,12 @@ int Gettarget(CUserCmd* cmd)
 void legit::Aimbot(CUserCmd* cmd)
 {
 	auto target = C_BasePlayer::GetPlayerByIndex(Gettarget(cmd));
+	if (!Checkplayer(target))
+		return;
+
 	QAngle angle;
 
-	angle = Math::CalcAngle(g_LocalPlayer->GetEyePos(), target->GetHitboxPos(HITBOX_HEAD));
+	angle = Math::CalcAngle(g_LocalPlayer->GetEyePos(), target->GetHitboxPos(options::hitbox));
 
 	if (options::smooth > 0.0f)
 		Math::SmoothAngle(cmd->viewangles, angle, options::smooth);

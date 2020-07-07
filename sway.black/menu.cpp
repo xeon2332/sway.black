@@ -100,6 +100,28 @@ namespace menu::tabs
 		// Aimbot
 		ImGui::Checkbox("Aimbot", &options::aimbot);
 		ImGui::SliderFloat("Smooth", &options::smooth, 0.0f, 25.0f);
+		ImGui::SliderFloat("FOV", &options::fov, 0.0f, 50.0f);
+		ImGui::Checkbox("While Blind", &options::aimflashed);
+		ImGui::Checkbox("Through smoke", &options::aimsmoked);
+
+		const char* items[] = { "Head", "Neck", "Pelvis", "Stomach", "Lower Chest", "Chest", "Upper Chest", "Right Thigh", "Left Thigh", 
+			"Right Calf", "Left Calf", "Right Foot", "Left Foot", "Right Hand", "Left Hand", "Right Upper Arm", "Right Forearm", "Left Upper Arm", "Left Forearm" };
+		static const char* current_item = NULL;
+		if (ImGui::BeginCombo("Hitboxes", current_item))
+		{
+			for (int i = 0; i < IM_ARRAYSIZE(items); i++)
+			{
+				bool is_selected = (current_item == items[i]);
+				if (ImGui::Selectable(items[i], is_selected))
+					current_item = items[i];
+				if (is_selected)
+				{
+					ImGui::SetItemDefaultFocus();
+					options::hitbox = Hitboxes(i);
+				}
+			}
+			ImGui::EndCombo();
+		}
 
 		ImGui::NextColumn();
 		// Triggerbot
