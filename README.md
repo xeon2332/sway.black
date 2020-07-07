@@ -1,3 +1,9 @@
+# UI Redesign
+- [ ] Checkbox
+- [ ] SliderFloat
+- [ ] SliderInt
+- [ ] InputText
+
 # Features
 (release) means it needs to be in the first release
 
